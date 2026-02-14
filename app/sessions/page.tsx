@@ -160,8 +160,6 @@ export default function SessionsPage() {
         </>
       )}
 
-      <Snowflake className="fixed bottom-32 right-8 w-12 h-12 opacity-30" />
-
       {selectedSession && (
         <SessionDetailModal
           session={selectedSession}

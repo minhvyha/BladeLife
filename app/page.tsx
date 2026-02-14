@@ -145,7 +145,7 @@ export default function HomePage() {
       <div className="grid grid-cols-2 gap-4 mb-4">
         <Link
           href="/maintenance"
-          className="p-6 bg-white rounded-3xl border-[3px] border-black flex flex-col items-center justify-center gap-3 active:scale-95 transition-transform"
+          className="p-4 bg-white rounded-3xl border-[3px] border-black flex flex-col items-center justify-center gap-3 active:scale-95 transition-transform"
         >
           <Scissors className="w-8 h-8" />
           <span className="font-semibold text-center">Log Sharpening</span>
@@ -188,7 +188,7 @@ export default function HomePage() {
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 bg-[hsl(var(--snowflake))] rounded-full flex items-center justify-center">
-            <Snowflake className="w-6 h-6" />
+            <img src="/blue.svg" alt="" />
           </div>
           <div>
             <div className="text-sm text-[hsl(var(--text-secondary))]">Home Rink</div>

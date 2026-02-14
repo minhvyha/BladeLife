@@ -166,9 +166,6 @@ export default function MaintenancePage() {
       <div className="mb-4">
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg font-semibold">Sharpening History</h2>
-          <button className="text-[hsl(var(--primary-blue))] font-medium text-sm">
-            View All
-          </button>
         </div>
 
         {sharpenings.length === 0 ? (
@@ -183,15 +180,15 @@ export default function MaintenancePage() {
                 className="p-5 bg-white rounded-3xl border-[3px] border-black"
               >
                 <div className="flex gap-4">
-                  <div className="text-center min-w-[50px]">
+                  <div className="text-center min-w-[50px] bg-[#F1F5F9] rounded-[8px] px-4 py-2 border-[#E2E8F0] border">
                     <div className="text-xs text-[hsl(var(--text-muted))] uppercase">
                       {sharpening.date.split(' ')[1] || sharpening.date.split(' ')[0]}
                     </div>
-                    <div className="text-2xl font-bold">
+                    <div className="text-xl font-bold">
                       {sharpening.date.split(' ')[0]}
                     </div>
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col justify-center">
                     <div className="font-semibold mb-1">{sharpening.shop}</div>
                     <div className="text-sm text-[hsl(var(--text-secondary))]">
                       {sharpening.hollowRadius} Hollow
@@ -204,7 +201,6 @@ export default function MaintenancePage() {
         )}
       </div>
 
-      <Snowflake className="fixed bottom-32 right-8 w-12 h-12 opacity-30" />
 
       {/* Sharpening Modal */}
       {showSharpeningModal && (

@@ -78,13 +78,10 @@ function RinkInfoModal({ rink, onClose }: { rink: Rink; onClose: () => void }) {
         {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-[hsl(var(--border))]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[hsl(var(--ice-hard-bg))] flex items-center justify-center">
-              <Snowflake className="w-5 h-5" />
-            </div>
+
             <div>
               <h2 className="text-lg font-bold">{rink.name}</h2>
               <div className="flex items-center gap-1 text-sm text-[hsl(var(--text-secondary))]">
-                <MapPin className="w-3.5 h-3.5" />
                 <span className="line-clamp-1">{rink.address}</span>
               </div>
             </div>
@@ -249,7 +246,7 @@ export default function RinksPage() {
         })}
       </div>
 
-      <Snowflake className="fixed bottom-32 left-8 w-12 h-12 opacity-30" />
+      <Snowflake className=" left-8 w-12 h-12 opacity-30" />
 
       {selectedRink && (
         <RinkInfoModal rink={selectedRink} onClose={() => setSelectedRink(null)} />
