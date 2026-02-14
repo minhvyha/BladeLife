@@ -6,7 +6,7 @@ import { BottomNav } from '@/components/bottom-nav'
 import { useLocalStorage } from '@/hooks/use-local-storage'
 import { BladeLife, Sharpening, ChecklistItem, Rink } from '@/lib/types'
 import { defaultRinks } from '@/lib/rinks-data'
-import { Scissors, CheckCircle2, Circle } from 'lucide-react'
+import { Scissors, CheckCircle2, Circle, ListChecks } from 'lucide-react'
 import { Snowflake } from '@/components/snowflake'
 
 const defaultBladeLife: BladeLife = {
@@ -122,7 +122,7 @@ export default function MaintenancePage() {
       <div className="mb-4 p-6 bg-white rounded-3xl border-[3px] border-black">
         <div className="flex items-center gap-2 mb-4 font-semibold">
           <div className="w-6 h-6 bg-[hsl(var(--status-orange))] rounded flex items-center justify-center text-white text-sm">
-            ☰
+            <ListChecks className="w-4 h-4" />
           </div>
           Weekly Checklist
         </div>

@@ -7,7 +7,7 @@ import { useLocalStorage } from '@/hooks/use-local-storage'
 import { Session, Rink } from '@/lib/types'
 import { defaultRinks } from '@/lib/rinks-data'
 import { SessionDetailModal } from '@/components/session-detail-modal'
-import { ChevronRight, Snowflake as SnowflakeIcon, Droplet, Flame, ClipboardList } from 'lucide-react'
+import { ChevronRight, Snowflake as SnowflakeIcon, Droplets, Flame, FileText } from 'lucide-react'
 import { Snowflake } from '@/components/snowflake'
 
 export default function SessionsPage() {
@@ -36,7 +36,7 @@ export default function SessionsPage() {
 
   const getIceIcon = (type: string) => {
     if (type === 'Hard') return SnowflakeIcon
-    if (type === 'Soft') return Droplet
+    if (type === 'Soft') return Droplets
     return Flame
   }
 
@@ -109,7 +109,7 @@ export default function SessionsPage() {
       {sessions.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <div className="w-20 h-20 bg-[hsl(var(--input-bg))] rounded-full flex items-center justify-center mb-4">
-            <ClipboardList className="w-10 h-10 text-[hsl(var(--text-muted))]" />
+            <FileText className="w-10 h-10 text-[hsl(var(--text-muted))]" />
           </div>
           <h3 className="text-lg font-semibold mb-2">No Sessions Yet</h3>
           <p className="text-sm text-[hsl(var(--text-secondary))] max-w-xs leading-relaxed">

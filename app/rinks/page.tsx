@@ -6,7 +6,7 @@ import { BottomNav } from '@/components/bottom-nav'
 import { useLocalStorage } from '@/hooks/use-local-storage'
 import { Rink, RinkScheduleDay } from '@/lib/types'
 import { defaultRinks } from '@/lib/rinks-data'
-import { Search, Navigation, Info, X, Clock, MapPin, Calendar } from 'lucide-react'
+import { Search, Navigation2, Info, X, Clock, MapPin, CalendarDays } from 'lucide-react'
 import { Snowflake } from '@/components/snowflake'
 
 const RINK_DIRECTIONS: Record<string, string> = {
@@ -101,7 +101,7 @@ function RinkInfoModal({ rink, onClose }: { rink: Rink; onClose: () => void }) {
         {/* Schedule */}
         <div className="flex-1 overflow-y-auto p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-5 h-5 text-[hsl(var(--primary-blue))]" />
+            <CalendarDays className="w-5 h-5 text-[hsl(var(--primary-blue))]" />
             <h3 className="font-semibold text-base">Upcoming Schedule</h3>
           </div>
 
@@ -145,7 +145,7 @@ function RinkInfoModal({ rink, onClose }: { rink: Rink; onClose: () => void }) {
             rel="noopener noreferrer"
             className="w-full py-3 bg-[hsl(var(--primary-blue))] hover:bg-[hsl(var(--primary-blue-hover))] text-white rounded-xl font-semibold flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
           >
-            <Navigation className="w-4 h-4" />
+            <Navigation2 className="w-4 h-4" />
             Get Directions
           </a>
         </div>
@@ -232,7 +232,7 @@ export default function RinksPage() {
                     rel="noopener noreferrer"
                     className="flex-1 py-3 bg-[hsl(var(--primary-blue))] hover:bg-[hsl(var(--primary-blue-hover))] text-white rounded-xl font-semibold flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
                   >
-                    <Navigation className="w-4 h-4" />
+                    <Navigation2 className="w-4 h-4" />
                     Direction
                   </a>
                   <button
