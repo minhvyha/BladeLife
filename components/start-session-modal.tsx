@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { IceType, Rink } from '@/lib/types'
-import { X, Play, Snowflake as SnowflakeIcon, Droplet, Flame } from 'lucide-react'
+import { X, Play, Snowflake as SnowflakeIcon, Droplets, Flame } from 'lucide-react'
 
 interface StartSessionModalProps {
   rinks: Rink[]
@@ -24,7 +24,7 @@ export function StartSessionModal({ rinks, onStart, onClose }: StartSessionModal
 
   const iceOptions: { type: IceType; icon: typeof SnowflakeIcon; label: string }[] = [
     { type: 'Hard', icon: SnowflakeIcon, label: 'Hard' },
-    { type: 'Soft', icon: Droplet, label: 'Soft' },
+    { type: 'Soft', icon: Droplets, label: 'Soft' },
     { type: 'Rough', icon: Flame, label: 'Rough' },
   ]
 

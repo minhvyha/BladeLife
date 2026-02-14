@@ -8,7 +8,7 @@ import { BladeLife, Session, Rink, ActiveSession, IceType } from '@/lib/types'
 import { defaultRinks } from '@/lib/rinks-data'
 import { ActiveSessionView } from '@/components/active-session'
 import { StartSessionModal } from '@/components/start-session-modal'
-import { Edit, Play, ChevronRight, IceCream2 as SkateIcon } from 'lucide-react'
+import { Scissors, Play, ChevronRight, Zap } from 'lucide-react'
 import { Snowflake } from '@/components/snowflake'
 import Link from 'next/link'
 
@@ -109,7 +109,7 @@ export default function HomePage() {
       <div className="mb-4 p-6 bg-white rounded-3xl border-[3px] border-black">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <SkateIcon className="w-8 h-8" />
+            <Zap className="w-8 h-8" />
             <span className="text-lg font-semibold">Current Edge</span>
           </div>
           <span className={`${rating.color} text-white px-4 py-1 rounded-full text-sm font-medium`}>
@@ -119,11 +119,11 @@ export default function HomePage() {
 
         <div className="text-center mb-2">
           <div className="text-5xl font-bold">
-            {bladeLife.currentMm}
-            <span className="text-2xl text-[hsl(var(--text-secondary))]">/15hrs</span>
+            {bladeLife.hoursRemaining}
+            <span className="text-2xl text-[hsl(var(--text-secondary))]">hrs</span>
           </div>
           <div className="text-[hsl(var(--text-secondary))] mt-1">
-            {bladeLife.hoursRemaining}hrs left
+            {bladeLife.currentMm}mm blade left
           </div>
         </div>
 
@@ -134,7 +134,7 @@ export default function HomePage() {
           </div>
           <div className="h-3 bg-[hsl(var(--progress-bg))] rounded-full overflow-hidden">
             <div
-              className="h-full bg-[hsl(var(--progress-fill))] transition-all duration-300"
+              className={`h-full transition-all duration-300 ${rating.color}`}
               style={{ width: `${usagePercent}%` }}
             />
           </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
           href="/maintenance"
           className="p-6 bg-white rounded-3xl border-[3px] border-black flex flex-col items-center justify-center gap-3 active:scale-95 transition-transform"
         >
-          <Edit className="w-8 h-8" />
+          <Scissors className="w-8 h-8" />
           <span className="font-semibold text-center">Log Sharpening</span>
         </Link>
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Clock, IceCream2 as Skate } from 'lucide-react'
+import { Home, History, MapPin, Wrench } from 'lucide-react'
 import { Snowflake } from './snowflake'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
@@ -10,9 +10,9 @@ export function BottomNav() {
 
   const navItems = [
     { icon: Home, href: '/', label: 'Home' },
-    { icon: Clock, href: '/sessions', label: 'Sessions' },
-    { icon: Skate, href: '/rinks', label: 'Rinks' },
-    { icon: Snowflake, href: '/maintenance', label: 'Maintenance' },
+    { icon: History, href: '/sessions', label: 'Sessions' },
+    { icon: MapPin, href: '/rinks', label: 'Rinks' },
+    { icon: Wrench, href: '/maintenance', label: 'Maintenance' },
   ]
 
   return (

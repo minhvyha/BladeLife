@@ -6,7 +6,7 @@ import { BottomNav } from '@/components/bottom-nav'
 import { useLocalStorage } from '@/hooks/use-local-storage'
 import { BladeLife, Sharpening, ChecklistItem, Rink } from '@/lib/types'
 import { defaultRinks } from '@/lib/rinks-data'
-import { Scissors, CheckCircle2, Circle } from 'lucide-react'
+import { Scissors, CheckCircle2, Circle, ListChecks } from 'lucide-react'
 import { Snowflake } from '@/components/snowflake'
 
 const defaultBladeLife: BladeLife = {
@@ -74,6 +74,15 @@ export default function MaintenancePage() {
 
   const usagePercent = Math.round((bladeLife.hoursRemaining / bladeLife.totalHours) * 100)
 
+  const getRating = (percent: number) => {
+    if (percent >= 75) return { label: 'EXCELLENT', color: 'bg-[hsl(var(--status-green))]' }
+    if (percent >= 50) return { label: 'GOOD', color: 'bg-[hsl(var(--status-green))]' }
+    if (percent >= 25) return { label: 'FAIR', color: 'bg-[hsl(var(--status-orange))]' }
+    return { label: 'POOR', color: 'bg-[hsl(var(--status-red))]' }
+  }
+
+  const rating = getRating(usagePercent)
+
   const toggleChecklistItem = (id: string) => {
     setChecklist(
       checklist.map((item) =>
@@ -88,7 +97,12 @@ export default function MaintenancePage() {
 
       {/* Blade Life */}
       <div className="mb-4 p-6 bg-white rounded-3xl border-[3px] border-black">
-        <div className="font-semibold mb-4">Blade Life Remaining</div>
+        <div className="flex items-start justify-between mb-4">
+          <div className="font-semibold">Blade Life Remaining</div>
+          <span className={`${rating.color} text-white px-4 py-1 rounded-full text-sm font-medium`}>
+            {rating.label}
+          </span>
+        </div>
 
         <div className="flex items-end gap-3 mb-2">
           <div className="text-5xl font-bold">{bladeLife.currentMm}</div>
@@ -96,16 +110,17 @@ export default function MaintenancePage() {
           <div className="text-5xl font-bold ml-auto">{usagePercent}%</div>
         </div>
 
-        <div className="h-3 bg-[hsl(var(--progress-bg))] rounded-full overflow-hidden mb-3">
-          <div
-            className="h-full bg-[hsl(var(--progress-fill))] transition-all duration-300"
-            style={{ width: `${usagePercent}%` }}
-          />
-        </div>
-
-        <div className="flex justify-between text-sm text-[hsl(var(--text-secondary))]">
-          <span>MIN: {bladeLife.minMm}MM</span>
-          <span>MAX: {bladeLife.maxMm}MM</span>
+        <div className="mt-6">
+          <div className="flex justify-between text-sm mb-2">
+            <span className="font-medium">Usage Left</span>
+            <span className="font-semibold">{bladeLife.hoursRemaining}hrs</span>
+          </div>
+          <div className="h-3 bg-[hsl(var(--progress-bg))] rounded-full overflow-hidden">
+            <div
+              className={`h-full transition-all duration-300 ${rating.color}`}
+              style={{ width: `${usagePercent}%` }}
+            />
+          </div>
         </div>
       </div>
 
@@ -122,7 +137,7 @@ export default function MaintenancePage() {
       <div className="mb-4 p-6 bg-white rounded-3xl border-[3px] border-black">
         <div className="flex items-center gap-2 mb-4 font-semibold">
           <div className="w-6 h-6 bg-[hsl(var(--status-orange))] rounded flex items-center justify-center text-white text-sm">
-            ☰
+            <ListChecks className="w-4 h-4" />
           </div>
           Weekly Checklist
         </div>

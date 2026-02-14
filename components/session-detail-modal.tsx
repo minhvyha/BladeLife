@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Session, IceType, Rink } from '@/lib/types'
-import { X, Pencil, Trash2, Info, Snowflake as SnowflakeIcon, Droplet, Flame } from 'lucide-react'
+import { X, Edit3, Trash2, AlertCircle, Snowflake as SnowflakeIcon, Droplets, Flame } from 'lucide-react'
 
 interface SessionDetailModalProps {
   session: Session
@@ -35,7 +35,7 @@ function getImpact(duration: number, iceType: IceType): { deducted: number; mult
 
 function getIceIcon(type: IceType) {
   if (type === 'Hard') return SnowflakeIcon
-  if (type === 'Soft') return Droplet
+  if (type === 'Soft') return Droplets
   return Flame
 }
 
@@ -68,7 +68,7 @@ export function SessionDetailModal({ session, rinks, onClose, onUpdate, onDelete
 
   const iceOptions: { type: IceType; icon: typeof SnowflakeIcon; label: string }[] = [
     { type: 'Hard', icon: SnowflakeIcon, label: 'Hard' },
-    { type: 'Soft', icon: Droplet, label: 'Soft' },
+    { type: 'Soft', icon: Droplets, label: 'Soft' },
     { type: 'Rough', icon: Flame, label: 'Rough' },
   ]
 
@@ -194,7 +194,7 @@ export function SessionDetailModal({ session, rinks, onClose, onUpdate, onDelete
         <div className="bg-[hsl(var(--input-bg))] rounded-xl p-4 mb-6">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-bold uppercase">Blade Life Impact</span>
-            <Info className="w-4 h-4 text-[hsl(var(--text-muted))]" />
+            <AlertCircle className="w-4 h-4 text-[hsl(var(--text-muted))]" />
           </div>
           <div className="mb-2">
             <span className="text-3xl font-bold text-[hsl(var(--status-red))]">-{impact.deducted}</span>
@@ -211,7 +211,7 @@ export function SessionDetailModal({ session, rinks, onClose, onUpdate, onDelete
             onClick={() => setIsEditing(true)}
             className="flex-1 py-3.5 bg-[hsl(var(--primary-blue))] hover:bg-[hsl(var(--primary-blue-hover))] text-white rounded-xl font-semibold flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
           >
-            <Pencil className="w-4 h-4" />
+            <Edit3 className="w-4 h-4" />
             Edit
           </button>
           <button

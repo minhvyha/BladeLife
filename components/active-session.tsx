@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ActiveSession, IceType } from '@/lib/types'
-import { Square, Timer } from 'lucide-react'
+import { StopCircle, Timer } from 'lucide-react'
 
 function formatElapsed(ms: number): string {
   const totalSeconds = Math.floor(ms / 1000)
@@ -48,7 +48,7 @@ export function ActiveSessionView({ activeSession, onStop }: ActiveSessionViewPr
         onClick={onStop}
         className="w-full py-3.5 bg-white text-[hsl(var(--text-primary))] rounded-xl font-semibold flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
       >
-        <Square className="w-4 h-4 fill-current" />
+        <StopCircle className="w-5 h-5" />
         Stop Session
       </button>
     </div>
