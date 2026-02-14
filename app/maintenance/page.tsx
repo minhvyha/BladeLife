@@ -122,11 +122,6 @@ export default function MaintenancePage() {
             />
           </div>
         </div>
-
-        <div className="flex justify-between text-sm text-[hsl(var(--text-secondary))] mt-3">
-          <span>MIN: {bladeLife.minMm}MM</span>
-          <span>MAX: {bladeLife.maxMm}MM</span>
-        </div>
       </div>
 
       {/* Log Sharpening Button */}
