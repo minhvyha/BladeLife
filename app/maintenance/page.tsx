@@ -92,7 +92,7 @@ export default function MaintenancePage() {
   }
 
   return (
-    <div className="min-h-screen pb-24 px-4 pt-8 max-w-md mx-auto">
+    <div className="min-h-screen pb-24 px-8 pt-8 max-w-md mx-auto">
       <PageHeader title="Maintenance" />
 
       {/* Blade Life */}
@@ -105,9 +105,9 @@ export default function MaintenancePage() {
         </div>
 
         <div className="flex items-end gap-3 mb-2">
-          <div className="text-5xl font-bold">{bladeLife.currentMm}</div>
+          <div className="text-4xl font-bold">{bladeLife.currentMm}</div>
           <div className="text-2xl text-[hsl(var(--text-secondary))] mb-1">mm</div>
-          <div className="text-5xl font-bold ml-auto">{usagePercent}%</div>
+          <div className="text-4xl font-bold ml-auto">{usagePercent}%</div>
         </div>
 
         <div className="mt-6">

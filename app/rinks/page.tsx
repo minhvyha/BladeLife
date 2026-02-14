@@ -161,7 +161,7 @@ export default function RinksPage() {
   )
 
   return (
-    <div className="min-h-screen pb-24 px-4 pt-8 max-w-md mx-auto">
+    <div className="min-h-screen pb-24 px-8 pt-8 max-w-md mx-auto">
       <PageHeader title="Ice Rinks" />
 
       {/* Search Bar */}

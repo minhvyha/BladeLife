@@ -16,7 +16,7 @@ export function BottomNav() {
   ]
 
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md">
+    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-4rem)] max-w-md">
       <div className="bg-white rounded-full shadow-lg border-2 border-gray-200 px-6 py-3">
         <div className="flex justify-around items-center">
           {navItems.map((item) => {
